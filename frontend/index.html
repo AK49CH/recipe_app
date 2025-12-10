@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe AI App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍳 Recipe AI App</h1>
+            <p>Your AI-powered cooking companion</p>
+        </header>
+
+        <main>
+            <div class="hero">
+                <div class="feature-card">
+                    <h2>🔍 Find Recipes</h2>
+                    <p>Search for delicious recipes using ingredients you already have</p>
+                    <a href="#recipe-search" class="btn btn-primary">Search Recipes</a>
+                </div>
+
+                <div class="feature-card">
+                    <h2>📅 Plan 4 Dinners</h2>
+                    <p>Let AI create a complete 4-day dinner plan with shopping list</p>
+                    <a href="/meal-planner" class="btn btn-secondary">Plan Meals</a>
+                </div>
+            </div>
+
+            <section id="recipe-search" class="search-section">
+                <h2>Find Recipe by Ingredients</h2>
+                <div class="search-form">
+                    <div class="search-tabs">
+                        <button id="search-tab" class="tab-btn active">🔍 Find Recipes</button>
+                        <button id="favorites-tab" class="tab-btn">⭐ My Favorites</button>
+                    </div>
+
+                    <div id="search-section" class="search-section">
+                        <div class="input-group">
+                            <label for="ingredients">What ingredients do you have?</label>
+                            <input type="text" id="ingredients" placeholder="e.g., chicken, rice, tomatoes, onions"
+                                   class="ingredient-input">
+                            <small>Separate ingredients with commas</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="preferences">Any preferences? (optional)</label>
+                            <input type="text" id="preferences" placeholder="e.g., vegetarian, spicy, quick"
+                                   class="preference-input">
+                        </div>
+
+                        <button id="search-btn" class="btn btn-primary">🔍 Find Recipe</button>
+                    </div>
+
+                    <div id="favorites-section" class="search-section" style="display: none;">
+                        <div class="input-group">
+                            <label for="favorites-search">Search your favorites (optional)</label>
+                            <input type="text" id="favorites-search" placeholder="Search by name, ingredients, or description"
+                                   class="favorites-search-input">
+                        </div>
+
+                        <button id="load-favorites-btn" class="btn btn-secondary">📚 Load Favorites</button>
+                    </div>
+                </div>
+
+                <div id="recipe-results" class="results-container" style="display: none;">
+                    <h3>Recipe Found!</h3>
+                    <div id="recipe-card" class="recipe-card">
+                        <!-- Recipe content will be inserted here -->
+                    </div>
+                </div>
+
+                <div id="loading" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>AI is cooking up a recipe...</p>
+                </div>
+
+                <div id="error" class="error" style="display: none;">
+                    <p>Sorry, couldn't generate a recipe. Please try again.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by Ollama & AI • Running on your mini PC</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

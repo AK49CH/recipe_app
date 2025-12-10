@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List - Recipe AI App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛒 Shopping List</h1>
+            <nav>
+                <a href="/meal-planner" class="nav-link">← Back to Meal Plan</a>
+                <a href="/" class="nav-link">🏠 Home</a>
+            </nav>
+        </header>
+
+        <main>
+            <div id="shopping-loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading your shopping list...</p>
+            </div>
+
+            <div id="shopping-content" class="shopping-content" style="display: none;">
+                <div class="shopping-header">
+                    <h2>Ingredients for Your 4-Day Dinner Plan</h2>
+                    <div class="shopping-actions">
+                        <button id="print-btn" class="btn btn-secondary">🖨️ Print List</button>
+                        <button id="export-btn" class="btn btn-secondary">📤 Export</button>
+                    </div>
+                </div>
+
+                <div id="shopping-list" class="shopping-list">
+                    <!-- Shopping list items will be inserted here -->
+                </div>
+
+                <div class="shopping-summary">
+                    <p id="summary-text">Total items: <span id="total-items">0</span></p>
+                </div>
+            </div>
+
+            <div id="shopping-error" class="error" style="display: none;">
+                <p>No shopping list available. Please generate a meal plan first.</p>
+                <a href="/meal-planner" class="btn btn-primary">Create Meal Plan</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
